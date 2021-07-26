@@ -1,0 +1,679 @@
+
+/*Este é usado de forma padrão...para tirar todas as margins e padding do nosso navegador
+ usando o box-sizing: border-box...fazer com que fique reesponsivo no espaçamento*/
+ /*No asterisco estou dizendo que é para todos os elementos*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans";
+}
+
+input[type=number]{
+	margin-top: 8px;
+}
+
+input[type=text],
+input[type=button],
+input[type=submit],
+input[type=password],
+textarea{
+	-webkit-appearance:none;
+	border-radius: 0;
+}
+
+html,body{
+	height: 100%;
+	background: rgb(190,190,190);/*a tela fica com cor sinza bem clara*/
+}
+
+body{
+	overflow-x: hidden;
+}
+/*inicio card-title ... significa cartão de titulo*/
+.card-title{
+	width: 100%;
+	padding: 6px;
+	color: white;
+	margin: 10px 0;
+	font-size: 17px;
+	font-weight: lighter;
+	background: #0091ea;
+}
+
+/*fim card-title*/
+
+
+/*inicio - gerar-pdf*/
+.gerar-pdf {
+	display: block;
+	margin:8px 0;
+}
+.gerar-pdf a{
+	color: white !important;
+	padding: 3px 8px;
+	background: #E05C4E;
+	text-decoration: none;
+}
+
+/*fim - gerar-pdf*/
+/*Página de Login*/
+.box-login{
+	box-shadow: 10px 10px 5px #696969;
+	max-width: 600px;
+	width: 95%;
+	padding: 60px 2%;
+	background: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);/*Algo a mais para funcionar o internet explore sem problemas*/
+}
+.box-login h2{
+	text-align: center;
+	font-size: 19px;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin:10px 0;
+	color: black;
+}
+
+.box-login input[type=text],
+.box-login input[type=password]
+{
+	width: 100%;
+	height: 40px;
+	border: 1px  solid #ccc;
+	padding-left: 8px;
+	margin-top: 8px;
+}
+
+.box-login input[type=submit]{
+	width: 100px;
+	height: 40px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 14px;
+	background: #00bfa5;
+	color: white;
+	border: 0;
+}
+
+/*Box erro do painel*/
+
+.erro-box{
+	width: 100%;
+	padding: 8px 2%;
+	text-align: center;
+	background: #F75353;
+	color: white;
+	font-size: 15px;
+}
+/*Fim página login*/
+
+/*Painel de Controle*/
+.clear{clear: both;}
+
+.center{padding:0 2%;margin:0  auto;}
+
+
+
+header{
+	position: relative;
+	left: 250px;
+	padding: 10px 0;
+	background: #78909c;
+	width: calc(100% - 250px);/*Esta conta calc..foi feita(100% da largura do header - 300px da div.menu (largura tambem) Isto seria para dividir a tela*/
+}
+.content{
+	width: calc(100% - 250px);
+	position: relative;
+	left: 250px;
+	padding: 2%;
+}
+
+.items-menu{
+	margin-top: 30px;
+}
+.items-menu h2{
+	text-align: left;
+	font-weight: normal;
+	font-size: 17px;
+	background: #2F3D42;
+	color: white;
+	padding: 8px;
+}
+
+.items-menu a{
+	display: block;
+	padding: 8px;
+	font-weight: 300;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid #2F3D42;
+}
+
+.loggout{
+	float: right;
+}
+.loggout a{
+	padding: 0 20px;
+	position: relative;
+	top: 4px;
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+}
+/*Pegando o span->(estilizar) o Sair*/
+.loggout a > span{
+	font-size: 17px;
+	text-decoration: none;
+} 
+/*O meu botão menu que tem três barras*/
+.menu-btn{
+	float: left;
+	cursor: pointer;
+	font-size: 23px;
+	color: white;
+}
+.menu-wraper{width:250px;}
+/*Trabalhando o menu completo*/
+
+div.menu{ /*Menu da foto no painel*/
+	overflow-x: hidden;
+	overflow-y: auto; /*Barra do menu*/
+	height: 100%;
+	padding: 10px 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: #455a64;
+	float: left; /*Onde tem float(flutua) eu coloco (clear)lá no html*/
+	width: 250px;
+}
+
+div.box-usuario{
+	padding: 8px;
+	text-align: center;
+}
+/*este avatar é a bola vermelha*/
+.avatar-usuario{
+	text-align: left;
+	display: inline-block;/*para conseguir ficar centralizado*/
+	width: 130px;
+	height: 130px;
+	border-radius: 50%; /*Para ficar arredondado os cantos das bordas*/
+	border: 3px solid #2F3D42;
+}
+/*A parte do avatar mas o icone (i)*/
+.avatar-usuario i{
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);/*Para funcionar no internet explore também*/
+	font-size: 50px;
+	color: #2F3D42;
+}
+
+.imagem-usuario{
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+	position: relative;
+	border-radius: 50%;
+	border: 3px solid #2F3D42;
+	
+}
+.imagem-usuario img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.nome-usuario{
+	text-align: center;
+	margin-top: 10px;
+}
+.nome-usuario p{
+	color: white;
+	font-size: 15px;
+	font-weight: normal;
+}
+/*conteúdo principal do painel*/
+
+.w100{
+	width: 100%;
+}
+.w50{
+	width: 49%;
+	
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+	
+.box-content{
+	background: white;
+	padding: 30px;
+	margin-bottom: 25px;
+}
+.box-content h2{
+	font-weight: 300;
+	font-size: 23px;
+}
+
+/*Tabelas--pagina listar-depoimento*/
+table{
+	font-weight: 300;
+	min-width: 900px;
+	margin: 20px 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+table tr:nth-of-type(1){
+	background: #0091ea;
+	color: white;
+}
+table td{
+	padding: 8px;
+}
+table tr{
+	border-bottom: 1px solid #ccc;
+}
+table tr{
+	color: #555;
+	/*border-bottom: 1px solid #ccc;*/
+}
+table a.btn{
+	font-weight: normal;
+   font-size: 13px;
+   color: white;
+   text-decoration: none;
+   padding: 4px 6px;
+}
+a.btn.edit{background: #F4B03E;}
+a.btn.delete{background: #E05C4E;}
+a.btn.order{background: #0091ea;}
+
+/*Paginação do painel de controle*/
+.paginacao{
+	margin: 20px 0;
+	text-align: center;
+}
+.paginacao a{
+	font-size: 14px;
+	margin: 0 8px;
+	display: inline-block;
+	padding: 3px 4px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #666;
+}
+.paginacao a.page-selected{
+	background: rgb(220,220,220);
+}
+
+/*Box Metricas*/
+.box-metricas{
+	margin-top: 16px;
+	padding: 0 15px;
+}
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #04A65A;
+}
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+.box-metrica-wraper h2{
+	font-size: 28px;
+}
+.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 26px;
+}
+/*Tabela Responsiva*/
+.table-responsive{
+	/*max-width: 1280px;*/
+	margin:20px auto;
+}
+.table-responsive .row:nth-of-type(1){
+	font-weight: bold;
+	background: #00bfa5;
+	padding: 10px;
+	color: white;
+	/*border-radius:1px solid #ccc;*/
+	
+}
+.table-responsive .row{
+	color: #777;
+	padding: 8px /*0*/; 
+	border-bottom: 1px solid #ccc;
+	}
+
+.col{
+	float: left;
+	width: 50%;
+}
+/*Estilizar o meu formulário do editar usuario*/
+.box-content form{
+	margin: 30px 0;
+}
+.box-content form label{
+	font-size: 17px;
+	font-weight: 300;
+	color: black;
+	display: block;
+}
+.box-content .form-group{
+	margin: 15px 0;
+}
+.box-content form input[type=text],
+.box-content form input[type=password],
+.box-content form input[type=number],
+.box-content form input[type=date]
+{
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding-left: 8px;
+}
+
+/*Estilização da caixa de texto tela cadastrar depoimentos*/
+.box-content form textarea{
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	width: 100%;
+	height: 150px;
+	border: 1px solid #ccc;
+	padding: 8px;
+	resize: vertical; /*só deixa crescer a caixa de texto através da altura*/
+}
+
+/*Caixa de seleção*/
+.box-content form select{
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding-left: 8px;
+}
+
+
+.box-content form input[type=file]{
+	margin-top:8px;
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+}
+
+.box-content form input[type=submit]{
+	width: auto;
+	height: 40px;
+	padding: 3px 8px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 16px;
+	background: #00bfa5;
+	color: white;
+	border: 0;
+}
+
+
+/*implementando box de alerta do editar-usuario.php painel de controle*/
+.box-alert{
+	width: 100%;
+	padding: 8px 0;
+	text-align: center;
+	margin-bottom: 8px;
+}
+.box-alert a{
+	color: white;
+	font-weight: bold;
+}
+.sucesso{
+	background: #a5d6a7;
+    color: white;
+}
+.erro{
+   background: #F75353;
+   color: white;
+}
+.atencao{
+	background: #F4a742;
+	color: white;
+}
+
+/* No menu quando selecionarmos terremos a class menu-active como efeito*/
+.menu-active{
+	background: #3a4b51;
+}
+.menu-active::before{ /*Este before significa antes da String...antes do que está escrito*/
+     /*
+     content:'> '; Adicionar seta para quando estiver selecionado...
+     */
+
+}
+
+/*Estilizando o Lembra-me*/
+.form-group-login label{
+    font-size: 13px;
+    padding-right: 10px;
+    font-weight: 300;
+    color: black;
+}
+form .form-group-login:nth-of-type(2){ /*Se eu colocar (1) pego LOGAR se colocar (2) pego LEMBRAR-ME*/
+	position: relative;
+	top: 10px;
+}
+/*inicio - estilizando pagina cadastrar clientes*/
+.boxes{
+	display: flex; /*flex deixa as imagens uma do lado da outra*/
+	flex-wrap: wrap;
+}
+.box-single-wraper{
+	width: 33.3%;
+	padding: 20px;
+}
+.box-single{
+	overflow-x: auto;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ccc;
+	
+}
+
+.box-imgs img{
+   width: 100%;
+}
+.box-imgs img.img-square{
+   width: 200px;
+   height: 200px;
+   display: block;
+   margin:8px auto;
+}
+.box-imgs{
+	text-align: center;
+}
+.box-imgs h1{
+	color: #ccc;
+	font-size: 70px;
+	margin: 10px 0;
+}
+
+.topo-box{
+	text-align: center;
+	color: #ccc;
+	padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+.topo-box img{
+	display: block;
+	max-width: 150px;
+	margin:0 auto; /*para imagem ficar centralizada*/
+}
+.topo-box h2{
+	font-size: 36px;
+}
+.body-box{
+	padding: 10px;
+}
+.body-box p{
+    color: #646464;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+.group-btn{margin-top: 15px;}
+.group-btn a{ /*link editar e excluir*/
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	padding:3px 8px;
+}
+
+
+/*fim - estilizando pagina cadastrar clientes*/
+
+/*inicio - da estilização buscar ou pesquisar*/
+.busca{
+  margin:10px 0;
+  width: 100%;
+  padding: 8px 10px;
+  background: rgb(225,225,225); 
+}
+.busca form{
+	margin: 0;
+}
+.busca h4{
+	font-weight: lighter; /*(lighter) ->altura da fonte (mais leve)*/
+	font-size: 23px;
+	color: #646464;
+}
+.busca-result{
+	color: #646464;
+	border-top:3px solid #ccc; /*é uma faxa ou linha solida*/
+}
+.busca-result p{
+	font-size: 14px;
+}
+/* fim - estilização busca ou pesquisar*/
+
+/*inicio - estilizando a lista-servicos .texto*/
+.texto{
+	text-align: justify;
+	max-width:40ch;
+	padding-right: 2em;
+}
+/*fim - estilizando a lista-servicos .texto*/
+
+
+
+/*Vou começar a implementar com javascript..ocultar o meu menu quando chegar em 768px;*/
+
+/*@media screen and (max-width: 1200px){
+	.box-metrica-single{
+		height: 100px;
+		
+	}
+}*/
+@media screen and (max-width: 1024px){
+	/*inicio - responsividade do painel cadastro clientes*/
+	.box-single-wraper{ /*para complementar eu coloquei no...box-single{
+	overflow-x: auto; ...lá em cima*/
+		width: 100%;
+		min-height: 0;
+	}
+	/*fim - responsividade do painel cadastro clientes*/
+	.box-metrica-single{
+		width: 100%;
+		/*height: auto;*/
+	}
+}
+
+@media screen and (max-width: 764px){
+
+	/*.menu{
+		display: none;
+	}*/
+	
+	.content{
+		width: 100%;
+		left: 0;
+	}
+	header{
+		left: 0;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.box-imgs,
+	.box-single{
+		width: 100% !important;
+	}
+	/*inicio - vi depois*/
+	.w50{
+		width: 100%; 
+	}
+	/*fim - vi depois*/
+	.box-single-metrica{
+		width: 100%;
+		padding-top: 40%;
+	}
+}	
+	
+@media screen and (max-width: 400px){
+	/*inicio - vi depois*/
+	.box-content{
+		padding: 8px 2px;
+	}
+	.box-metrica-wrapper h2{
+       font-size: 24px;
+		
+	}
+	.box-content a{
+		color:black;
+	}
+	.box-metrica-wrapper p{
+		padding: 10px 0;
+		font-size: 22px;
+	}
+	/*fim - vi depois*/
+	.menu-wraper{
+		width: 200px;
+	}
+}
+@media screnn and (max-width: 380px){
+	.itens-menu a{
+		font-size: 15px;
+	}
+}
